@@ -3,8 +3,11 @@ LABEL maintainer="Nguyen Nguyen <nguyenbk92@gmail.com>"
 # Set the working directory to /app
 WORKDIR /app
 RUN  apk add --update \
+    python \
     git \
-    bash
+    bash \
+    make \
+    g++
 
 # Copy the current directory contents into the container at /app
 COPY public/ /app/
