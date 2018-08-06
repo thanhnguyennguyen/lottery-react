@@ -6,9 +6,14 @@ import lottery from './lottery';
 
 const etherUnit = 'ether';
 let manager = '';
-
+let accounts = [];
 
 class App extends Component {
+    async componentWillMount() {
+        manager = await lottery.methods.manager().call();
+        accounts = await web3.eth.getAccounts();
+    }
+
     state = {
         manager: '',
         players: [],
@@ -16,12 +21,13 @@ class App extends Component {
         value: '',
         message: ''
     }
+
     async componentDidMount() {
         document.title = 'Lottery application';
         if (web3 === undefined) {
             return;
         }
-        manager = await lottery.methods.manager().call();
+        
         const players = await lottery.methods.getPlayers().call();
         const balance = await web3.eth.getBalance(lottery.options.address);
         this.setState({
@@ -35,7 +41,6 @@ class App extends Component {
 
     onSubmit = async (event) => {
         event.preventDefault();
-        const accounts = await web3.eth.getAccounts();
         this.setState({message: 'Waiting on transaction success...'});
         try {
             await lottery.methods.enter().send({
@@ -58,7 +63,6 @@ class App extends Component {
     }
 
     onClick = async () => {
-        const accounts = await web3.eth.getAccounts();
         this.setState({message: 'Waiting on transaction success...'});
         try {
             await lottery.methods.pickWinner().send({
@@ -119,11 +123,25 @@ class App extends Component {
                 </form>
                 <hr/>
                 <h4>{this.state.message}</h4>
-                <hr/>
-                <h4>Let's pick a winner</h4>
-                <button onClick={this.onClick}>Pick a Winner</button>
+                <ManagerView isManager={accounts[0] === manager}/>
             </div>
         );
+    }
+}
+
+class ManagerView extends React.Component {
+    render() {
+        if (this.props.isManager) {
+            return (
+                <div>
+                    <h4>Let's pick a winner</h4>
+                    <button onClick={this.onClick}>Pick a Winner</button>
+                </div>
+            );
+        }
+        return (
+        <div></div>
+        )
     }
 }
 
