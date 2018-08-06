@@ -10,8 +10,8 @@ RUN  apk add --update \
     g++
 
 # Copy the current directory contents into the container at /app
-COPY public/ /app/
-COPY src/ /app/
+COPY public/* /app/
+COPY src/* /app/
 COPY package* /app/
 
 RUN npm install
