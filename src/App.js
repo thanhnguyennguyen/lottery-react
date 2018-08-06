@@ -10,6 +10,9 @@ let accounts = [];
 
 class App extends Component {
     async componentWillMount() {
+        if (lottery === undefined || web3 === undefined) {
+            return;
+        }
         manager = await lottery.methods.manager().call();
         accounts = await web3.eth.getAccounts();
     }
