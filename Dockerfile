@@ -9,7 +9,7 @@ RUN  apk add --update \
 # Copy the current directory contents into the container at /app
 COPY public/ /app/
 COPY src/ /app/
-COPY package*/ /app/
+COPY package* /app/
 
 RUN npm install
 RUN npm start
