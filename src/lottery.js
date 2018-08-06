@@ -82,4 +82,8 @@ const abi = [{
     "type": "constructor"
 }];
 
-export default new web3.eth.Contract(abi, address);
+let contract;
+if (web3 !== undefined) {
+    contract = new web3.eth.Contract(abi, address);
+}
+export default contract;

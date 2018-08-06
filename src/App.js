@@ -17,6 +17,10 @@ class App extends Component {
         message: ''
     }
     async componentDidMount() {
+        document.title = 'Lottery application';
+        if (web3 === undefined) {
+            return;
+        }
         manager = await lottery.methods.manager().call();
         const players = await lottery.methods.getPlayers().call();
         const balance = await web3.eth.getBalance(lottery.options.address);
@@ -75,6 +79,13 @@ class App extends Component {
     }
 
     render() {
+        if (web3 === undefined) {
+            alert('Please install and login metamask extension!');
+            return (
+                <div className="App">        
+                </div>
+            );
+        }
         return (
             <div className="App">
                 <h2>Lottery contract</h2>
