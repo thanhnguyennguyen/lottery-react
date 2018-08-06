@@ -78,11 +78,25 @@ class App extends Component {
         
     }
 
+    handleNoMetamask() {
+        setTimeout(function(){
+            var win = window.open('http://metamask.io/', '_blank');
+            if (win) {
+                //Browser has allowed it to be opened
+                win.focus();
+            } else {
+            //Browser has blocked it
+            alert('Please allow popups for this website');
+            }
+        }, 5000);
+    }
+
     render() {
         if (web3 === undefined) {
-            alert('Please install and login metamask extension!');
+            this.handleNoMetamask();
             return (
-                <div className="App">        
+                <div className="App"> 
+                    <h1>Please install and login metamask then reloading this page</h1>      
                 </div>
             );
         }
