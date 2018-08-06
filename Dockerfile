@@ -15,6 +15,5 @@ COPY src/* /app/
 COPY package* /app/
 
 RUN npm install
-RUN cd /app
-RUN npm start
+CMD ["npm", "start"]
 
