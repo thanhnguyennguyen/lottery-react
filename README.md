@@ -8,7 +8,6 @@ Travis_Build_Status [![Travis_Build_Status](https://travis-ci.com/thanhnguyenngu
 # [![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/thanhnguyennguyen/lottery-react-app/)
 # Decentralized lottery application based on Ethereum platform
 
-# Copyright © 2018 Nguyen Nguyen
 
 ## Setup
 <code>npm install</code>
