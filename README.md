@@ -26,3 +26,6 @@ If you want to use docker, please pull the docker image
 - Address 0x33a8cabFE581783e7A074D6c35b36d449F20D33E
 - Network: Rinkeby
 - URL: [https://rinkeby.etherscan.io/address/0x33a8cabFE581783e7A074D6c35b36d449F20D33E](https://rinkeby.etherscan.io/address/0x33a8cabFE581783e7A074D6c35b36d449F20D33E)
+
+## Document
+Open Lottery.xml in [https://draw.io]https://draw.io to deeply understand business of this application
