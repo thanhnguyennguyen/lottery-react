@@ -14,10 +14,15 @@ Travis_Build_Status [![Travis_Build_Status](https://travis-ci.com/thanhnguyenngu
 <code>npm install</code>
 ## Start application
 <code>npm start</code>
-- Open local server at [[http:localhost:3000]](http:localhost:3000) 
-# Testing
+- Open local server at [http:localhost:3000](http:localhost:3000) 
+## Testing
 <code>npm test</code>
 ## Dockerization
 If you want to use docker, please pull the docker image 
 - <code>docker pull nguyennguyen/lottery-react-app</code> 
 - <code>docker run -it nguyennguyen/lottery-react-app bash </code>
+
+## Smart Contract
+- Address 0x33a8cabFE581783e7A074D6c35b36d449F20D33E
+- Network: Rinkeby
+- URL: [https://rinkeby.etherscan.io/address/0x33a8cabFE581783e7A074D6c35b36d449F20D33E](https://rinkeby.etherscan.io/address/0x33a8cabFE581783e7A074D6c35b36d449F20D33E)
