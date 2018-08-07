@@ -29,3 +29,6 @@ If you want to use docker, please pull the docker image
 
 ## Document
 Open Lottery.xml in [https://draw.io]https://draw.io to deeply understand business of this application
+- Contribution![contribution](https://i.imgur.com/IgKIqav.jpg)
+- Manager picks a winner and reset game ![request](https://i.imgur.com/Boo8PLJ.jpg)
+- Smart contract sends reward to a winner ![reward](https://i.imgur.com/0GeIBNa.jpg)
